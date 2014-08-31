@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite errors="0" failures="1" name="Sample Feature" skipped="0" tests="1" time="0.104390">
+  <testcase classname="Sample Feature" name="Green Scenario" time="0.104390">
+  </testcase>
+
+  <testcase classname="Sample Feature" name="Red Scenario" failures="1" time="0.104390">
+    <failure message="failed Collaborator upload tests result" type="failed">
+    </failure>
+  </testcase>
+</testsuite>

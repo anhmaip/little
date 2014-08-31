@@ -1,0 +1,16 @@
+postgresql: &postgresql
+  adapter: postgresql
+  host: localhost
+  encoding: unicode
+  username: <%= ENV["POSTGRESQL_USERNAME"] || "postgres" %>
+
+development:
+  <<: *postgresql
+  database: coleslaw_dev
+
+test: &test
+  <<: *postgresql
+  database: coleslaw_test
+
+cucumber:
+  <<: *test

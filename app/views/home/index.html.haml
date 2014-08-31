@@ -1,0 +1,154 @@
+.intro-wrapper
+  .introduction
+    .text Ciao!
+    .text In this page, there are 7 hidden messages...
+    .text I think you would like to find them :)
+    .text How? By being patient! :)
+    .text Hint: Mouse over every inch on the page and you'll see magic...
+    .text I will give away the first and biggest one...
+    %span.clickable.secret1-click Right here!!!
+
+.secret.secret1.clickable.secret1-click.hidden
+  .content.hidden #1
+.secret-wrapper
+  .secret1-content.collapse
+    .border
+      = image_tag image_url("little2014.gif")
+      .close-btn
+
+.secret.secret2.clickable.secret2-click
+  .content.hidden #2
+.secret-wrapper.hidden
+  .secret2-content.collapse
+    .border
+      = image_tag image_url("little_basilo.jpg")
+      .close-btn
+
+.secret.secret3.clickable.secret3-click
+  .content.hidden #3
+.secret-wrapper.hidden
+  .secret3-content.collapse
+    .border
+      = image_tag image_url("sid.jpg")
+      .close-btn
+
+.secret.secret4.clickable.secret4-click
+  .content.hidden #4
+.secret-wrapper.hidden
+  .secret4-content.collapse
+    .border
+      = image_tag image_url("hot_cony.jpg")
+      .close-btn
+
+.secret.secret5.clickable.secret5-click
+  .content.hidden #5
+.secret-wrapper.hidden
+  .secret5-content.collapse
+    .border
+      = image_tag image_url("hug.jpg")
+      .close-btn
+
+.secret.secret6.clickable.secret6-click
+  .content.hidden #6
+.secret-wrapper.hidden
+  .secret6-content.collapse
+    .border
+      .music
+        %audio#audio{controls: "", preload: "auto", tabindex: "0"}
+          %source{src: asset_url("dream_a_little_dream_of_me.mp3")}
+            Your Fallback goes here
+        %ol#playlist
+          %li.active
+            %a{href: asset_url("dream_a_little_dream_of_me.mp3")}
+              Dream a Little Dream of Me - Michael Buble
+          %li
+            %a{href: asset_url("be_italian.mp3")}
+              Be Italian - Fergie
+          %li
+            %a{href: asset_url("someone_to_watch_over_me.mp3")}
+              Someone to Watch Over Me - Allison Iraheta
+          %li
+            %a{href: asset_url("you_and_i.mp3")}
+              You and I - Michael Buble
+          %li
+            %a{href: asset_url("cry_me_out.mp3")}
+              Cry me out - Pixie Lott
+          %li
+            %a{href: asset_url("put_your_head_on_my_shoulder.mp3")}
+              Put your head on my shoulder - Michael Buble
+          %li
+            %a{href: asset_url("something_stupid.MP3")}
+              Something stupid - Robbie Williams
+          %li
+            %a{href: asset_url("refrection.mp3")}
+              Reflection - Christina Aguilera
+          %li
+            %a{href: asset_url("mama_do.mp3")}
+              Mama do - Pixie Lott
+          %li
+            %a{href: asset_url("lucky.mp3")}
+              Lucky - Glee
+          %li
+            %a{href: asset_url("try_a_little_tenderness.mp3")}
+              Try a Little Tenderness - Michael Buble
+          %li
+            %a{href: asset_url("a_thousand_years.mp3")}
+              A thousand years - Glee
+          %li
+            %a{href: asset_url("GlenHansard_FallingSlowly.mp3")}
+              Falling Slowly - Glen Hansard
+          %li
+            %a{href: asset_url("the_way_you_look_tonight.mp3")}
+              The way you look tonight - Michael Buble
+          %li
+            %a{href: asset_url("creep.mp3")}
+              Creep - Glee
+      .close-btn
+
+.secret.secret7.clickable.secret7-click
+  .content.hidden #7
+.secret-wrapper.hidden
+  .secret7-content.collapse
+    .border
+      = image_tag image_url("pam.jpg")
+      .close-btn
+
+
+:javascript
+  var audio;
+  var playlist;
+  var tracks;
+  var current;
+
+  function musicinit() {
+    current = 0;
+    audio = $('#audio');
+    playlist = $('#playlist');
+    tracks = playlist.find('li a');
+    len = tracks.length - 1;
+    audio[0].volume = .50;
+    audio[0].play();
+    playlist.find('a').click(function(e){
+        e.preventDefault();
+        link = $(this);
+        current = link.parent().index();
+        run(link, audio[0]);
+    });
+    audio[0].addEventListener('ended',function(e){
+      current++;
+      if(current == len){
+          current = 0;
+          link = playlist.find('a')[0];
+      }else{
+          link = playlist.find('a')[current];
+      }
+      run($(link),audio[0]);
+    });
+  }
+  function run(link, player){
+    player.src = link.attr('href');
+    par = link.parent();
+    par.addClass('active').siblings().removeClass('active');
+    audio[0].load();
+    audio[0].play();
+  }

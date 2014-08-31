@@ -1,0 +1,312 @@
+@import bourbon
+
+.uppercase
+  text-transform: uppercase
+
+a.link
+  color: #46ac73
+  text-decoration: none
+  &:hover
+    color: #71c895
+
+.logo-big
+  display: block
+  background: image-url('homepage_sprites.png') no-repeat -25px -13px
+  width: 372px
+  height: 59px
+  margin: 30px auto
+
+.logo-small
+  background: image-url('homepage_sprites.png') no-repeat -35px -110px
+  width: 271px
+  height: 43px
+  margin: 20px 15px
+
+.container, .container-fluid
+  padding: 0
+  font-family: Helvetica
+  .row
+    margin: auto 0
+
+footer
+  hr
+    border-top-width: 2px
+    margin-bottom: 0
+    
+  .copy-right
+    font-size: 12px
+    margin: 10px 15px
+
+.navbar-default
+  background-color: white
+  border: none
+  margin-bottom: 15px
+
+  .navbar-toggle
+    margin-top: 23px
+
+  .menu
+    background: #7bc99b
+
+  .navbar-nav
+    margin: 0
+    li a
+      height: 40px
+      padding: 10px 25px
+      font-size: 14px
+      font-weight: bold
+      text-decoration: none
+      text-transform: uppercase
+      &:hover
+        color: #119690
+
+  .navbar-left
+    li a
+      color: #247b77
+      &.active, &:hover.active
+        color: white
+        background: #7bc99b
+
+  .navbar-right
+    &:last-child
+      margin: auto 0
+
+    li a
+      color: white
+      background: #d0d2d3
+      &:hover
+        background: #d0d2d3
+
+    .current-user
+      margin: 10px
+
+      .user-email
+        color: white
+        padding: 0px 5px 0 15px
+
+.sidebar-nav
+  .project-list
+    font-size: 16px
+    margin-top: 40px
+
+    .project
+      margin-bottom: 10px
+
+      .header
+        .project-name a
+          display: block
+          padding-bottom: 10px
+          text-decoration: none
+          &.active
+            font-weight: bold
+
+        .edit-project, .delete-project
+          cursor: pointer
+          display: inline-block
+
+        .edit-project
+          background: image_url("edit_icon.png") no-repeat
+          height: 17px
+          width: 17px
+
+        .delete-project
+          background: image_url("delete_icon.png") no-repeat
+          height: 20px
+          width: 17px
+          margin-left: 2px
+
+      .project-description
+        color: #bbbdbf
+        font-size: 14px
+        margin-bottom: 10px
+        text-align: justify
+
+      .project-info
+        border-bottom: 1px solid #d0d2d3
+        border-top: 1px solid #d0d2d3
+        color: #231f20
+
+        .creator, .collaborator, .add-colla-link
+          margin: 15px
+
+        .creator
+          font-weight: bold
+
+        .add-colla-link
+          display: block
+          font-size: 14px
+          font-weight: bold
+          text-transform: uppercase
+          text-decoration: none
+
+    .new-project
+      .new-project-btn
+        display: block
+        text-align: center
+        width: 100%
+
+.page-title
+  font-size: 20px
+  font-weight: bold
+  padding-top: 5px
+
+.button
+  background: #f89d4b
+  color: white
+  cursor: pointer
+  font-size: 14px
+  font-weight: bold
+  padding: 7px 15px
+  text-transform: uppercase
+  &:hover
+    background: #ffae63
+    color: white
+    text-decoration: none
+  &.green-button
+    background: #6fc290
+    &:hover
+      background: #77d09a
+
+.table
+  border: 1px solid #d0d2d3
+  border-bottom-width: 3px
+  font-size: 14px
+  margin: 10px auto
+
+  thead tr th
+    border-bottom: none
+    color: #bbbdbf
+    font-weight: normal
+  tbody
+    color: #404041
+  tbody tr td, thead tr th
+    padding: 10px 20px
+
+.input-text
+  border: 1px solid #d0d2d3
+  font-size: 12px
+  height: 40px
+  margin: 12px 0
+  padding-left: 15px
+  width: 370px
+  &:focus
+    color: #6fc290
+    outline: none
+    border: 2px solid #6fc290 !important
+    &::-webkit-input-placeholder
+      color: #6fc290 !important
+    &:-moz-placeholder
+      color: #6fc290 !important
+      opacity: 1
+    &::-moz-placeholder
+      color: #6fc290 !important
+      opacity: 1
+    &:-ms-input-placeholder
+      color: #6fc290 !important
+
+.field_with_errors
+  position: relative
+  .input-text
+    border: 1px solid red
+    &::-webkit-input-placeholder
+      color: red
+    &:-moz-placeholder
+      color: red
+      opacity: 1
+    &::-moz-placeholder
+      color: red
+      opacity: 1
+    &:-ms-input-placeholder
+      color: red
+
+  .message
+    background: image-url('sign_in_up_sprites.png') no-repeat -30px -694px
+    width: 163px
+    height: 55px
+    color: white
+    font-weight: normal
+    font-size: 12px
+    padding: 10px 10px 10px 20px
+    position: absolute
+    left: 375px
+
+.modal
+  .modal-content
+    border-radius: 0
+    width: 430px
+    margin: 120px auto
+    text-align: center
+
+  .modal-title
+    color: #247b77
+    font-size: 26px
+    font-weight: bold
+    margin-left: 7px
+
+  .button
+    border: none
+    display: inline-block
+    height: 40px
+    width: 180px
+    margin: 6px 2px
+
+  .cancel-button
+    background: #d0d2d3
+    &:hover
+      background: #d7dadb
+
+.empty-test, .empty-project
+  .tool-tip
+    background: image_url("new_test_tooltip.png") no-repeat
+    height: 90px
+    width: 210px
+    color: #58595b
+    font-size: 18px
+    margin-top: -15px
+    padding: 24px 13px
+
+  .empty-box
+    margin-top: 20px
+    text-align: center
+    .image
+      display: inline-block
+    .text
+      color: #bbbdbf
+      display: inline-block
+      font-size: 18px
+
+.pagination
+  float: right
+  margin: 10px 0
+  font-size: 12px
+  font-weight: bold
+
+  .current
+    margin: 0 5px
+
+  a
+    color: #46ac73
+    margin: 0 5px
+    text-decoration: none
+    &:hover
+      color: #71c895
+
+.project-token
+  .text
+    color: #bbbdbf
+
+  .token
+    color: #6fc290
+
+#spinner
+  display: none
+  background: black
+  opacity: 0.2
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 2000
+  text-align: center
+  padding-top: 250px
